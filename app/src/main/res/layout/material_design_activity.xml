@@ -6,11 +6,33 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <!-- 让 AppBarLayout 作为 CoordinatorLayout 的第一个子 View，将 Toolbar 包裹在其中 -->
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:title="AppBarLayout+Toolbar"
+            app:layout_scrollFlags="scroll|enterAlways"/>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom"/>
+
+
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/floating_action_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        app:fabSize="mini"
-        app:layout_anchorGravity="bottom|right"/>
+        android:layout_gravity="bottom|right"
+        android:src="@mipmap/ic_launcher"
+        app:layout_anchorGravity="bottom"
+        app:fabSize="mini" />
 </android.support.design.widget.CoordinatorLayout>
