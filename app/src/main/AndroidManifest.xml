@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.MainActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -16,7 +16,11 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activity.MaterialDesignActivity"/>
+        <activity android:name=".materialdesign.activitiy.MDActivity"/>
+        <activity android:name=".materialdesign.activitiy.MDToolbarOneActivity"/>
+        <activity android:name=".materialdesign.activitiy.MDToolbarTwoActivity"/>
+        <activity android:name=".materialdesign.activitiy.MDToolbarThreeActivity"/>
+        <activity android:name=".materialdesign.activitiy.MDToolbarFourActivity"/>
     </application>
 
 </manifest>

@@ -12,10 +12,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:title="AppBarLayout+Toolbar"
-            app:layout_scrollFlags="scroll|enterAlways"/>
+            app:title="Toolbar: scroll|enterAlwaysCollapsed"
+            app:navigationIcon="@drawable/ic_arrow_back"
+            app:layout_scrollFlags="scroll|enterAlways|snap"/>
 
     </android.support.design.widget.AppBarLayout>
 
@@ -23,7 +25,10 @@
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="bottom"/>
+        android:layout_gravity="bottom"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+    <!--添加appbar_scrolling_view_behavior解决了RecycleView被Toolbar遮挡的问题-->
 
 
     <android.support.design.widget.FloatingActionButton
