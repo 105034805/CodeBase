@@ -16,7 +16,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:navigationIcon="@drawable/ic_arrow_back"
-            app:title="Toolbar: scroll|enterAlways"
+            app:title="Toolbar"
+            app:subtitle="scroll | enterAlways"
             app:layout_scrollFlags="scroll|enterAlways"/>
         <!--与scroll|enterAlways|snap效果一样-->
 

@@ -15,9 +15,10 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:title="Toolbar: scroll|enterAlwaysCollapsed"
+            app:title="Toolbar"
+            app:subtitle="scroll | enterAlwaysCollapsed"
             app:navigationIcon="@drawable/ic_arrow_back"
-            app:layout_scrollFlags="scroll|enterAlways|snap"/>
+            app:layout_scrollFlags="scroll|enterAlwaysCollapsed"/>
 
     </android.support.design.widget.AppBarLayout>
 
