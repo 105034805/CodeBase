@@ -21,6 +21,7 @@
         <activity android:name=".materialdesign.activitiy.MDToolbarTwoActivity"/>
         <activity android:name=".materialdesign.activitiy.MDToolbarThreeActivity"/>
         <activity android:name=".materialdesign.activitiy.MDToolbarFourActivity"/>
+        <activity android:name=".materialdesign.activitiy.MDCollapsingToolbarOneActivity"/>
     </application>
 
 </manifest>

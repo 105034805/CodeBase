@@ -23,11 +23,10 @@ import butterknife.ButterKnife;
 
 /**
  * Created by gaoyang on 16/12/19.
- * Toolbar: scroll|enterAlwaysCollapsed
  */
 
-public class MDToolbarTwoActivity extends MDToolbarActivity {
-    private static final String TAG = "MDToolbarTwoActivity";
+public class MDCollapsingToolbarOneActivity extends MDToolbarActivity {
+    private static final String TAG = "MDCollapsingToolbarOneActivity";
 
     @BindView(R.id.floating_action_button)
     FloatingActionButton floatingActionButton;
@@ -35,8 +34,8 @@ public class MDToolbarTwoActivity extends MDToolbarActivity {
     @BindView(R.id.coordinator_layout)
     CoordinatorLayout coordinatorLayout;
 
-    @BindView(R.id.recycler_view)
-    RecyclerView recyclerView;
+//    @BindView(R.id.recycler_view)
+//    RecyclerView recyclerView;
 
     private LinearLayoutManager layoutManager;
     private MDAdapter adapter;
@@ -44,19 +43,24 @@ public class MDToolbarTwoActivity extends MDToolbarActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.md_toolbar_two_activity);
 
-        ButterKnife.bind(this);
+        //把状态栏设为透明，并且在CollapsingToolbarLayout中加 app:statusBarScrim="@android:color/transparent"
+//        getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+
+
+        setContentView(R.layout.md_collapsing_toolbar_one_activity);
         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        ButterKnife.bind(this);
+
         init();
 
         floatingActionButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
                 final Snackbar snackbar = Snackbar.make(coordinatorLayout, "I am snackbar", Snackbar.LENGTH_SHORT);
-                snackbar.setAction("Dismiss me", new View.OnClickListener() {
+                snackbar.setAction("Dismiss", new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         snackbar.dismiss();
@@ -69,16 +73,17 @@ public class MDToolbarTwoActivity extends MDToolbarActivity {
     }
 
     private void init() {
-        layoutManager = new LinearLayoutManager(this);
-        layoutManager.setOrientation(OrientationHelper.VERTICAL);
-        // 设置布局管理器
-        recyclerView.setLayoutManager(layoutManager);
-        List<String> dataList = new ArrayList();
-        for (int i = 0; i < 100; i++) {
-            dataList.add("DIY-ITEM:" + i);
-        }
-        adapter = new MDAdapter(dataList, MDToolbarTwoActivity.this);
-        recyclerView.setAdapter(adapter);
+//        layoutManager = new LinearLayoutManager(this);
+//        layoutManager.setOrientation(OrientationHelper.VERTICAL);
+//        // 设置布局管理器
+//        recyclerView.setLayoutManager(layoutManager);
+//        List<String> dataList = new ArrayList();
+//        for (int i = 0; i < 100; i++) {
+//            dataList.add("DIY-ITEM:" + i);
+//        }
+//        adapter = new MDAdapter(dataList, MDCollapsingToolbarOneActivity.this);
+//        recyclerView.setAdapter(adapter);
     }
+
 
 }

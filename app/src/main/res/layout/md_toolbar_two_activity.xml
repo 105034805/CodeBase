@@ -14,11 +14,17 @@
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="200dp"
+            android:minHeight="?android:attr/actionBarSize"
+            android:gravity="bottom"
             app:title="Toolbar"
-            app:subtitle="scroll | enterAlwaysCollapsed"
-            app:navigationIcon="@drawable/ic_arrow_back"
-            app:layout_scrollFlags="scroll|enterAlwaysCollapsed"/>
+            android:titleTextAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title"
+            app:subtitle="scroll | enterAlways | enterAlwaysCollapsed"
+            app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed"/>
+
+        <!--一般跟enterAlways一起使用，它是指，View在往下“出现”的时候，首先是enterAlways效果，
+        当View的高度达到最小高度时，View就暂时不去往下滚动，直到ScrollView滑动到顶部不再滑动时，
+        View再继续往下滑动，直到滑到View的顶部结束-->
 
     </android.support.design.widget.AppBarLayout>
 

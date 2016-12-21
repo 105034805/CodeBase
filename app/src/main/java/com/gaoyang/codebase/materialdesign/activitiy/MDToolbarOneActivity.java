@@ -9,10 +9,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.gaoyang.codebase.R;
-import com.gaoyang.codebase.materialdesign.adapter.MDToolbarAdapter;
+import com.gaoyang.codebase.materialdesign.adapter.MDAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +26,7 @@ import butterknife.ButterKnife;
  * Toolbar: scroll|enterAlways
  */
 
-public class MDToolbarOneActivity extends AppCompatActivity {
+public class MDToolbarOneActivity extends MDToolbarActivity {
     private static final String TAG = "MDToolbarOneActivity";
 
     @BindView(R.id.floating_action_button)
@@ -38,7 +39,7 @@ public class MDToolbarOneActivity extends AppCompatActivity {
     RecyclerView recyclerView;
 
     private LinearLayoutManager layoutManager;
-    private MDToolbarAdapter adapter;
+    private MDAdapter adapter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -46,7 +47,9 @@ public class MDToolbarOneActivity extends AppCompatActivity {
         setContentView(R.layout.md_toolbar_one_activity);
 
         ButterKnife.bind(this);
-
+        final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         init();
 
         floatingActionButton.setOnClickListener(new View.OnClickListener(){
@@ -74,7 +77,7 @@ public class MDToolbarOneActivity extends AppCompatActivity {
         for (int i = 0; i < 100; i++) {
             dataList.add("DIY-ITEM:" + i);
         }
-        adapter = new MDToolbarAdapter(dataList, MDToolbarOneActivity.this);
+        adapter = new MDAdapter(dataList, MDToolbarOneActivity.this);
         recyclerView.setAdapter(adapter);
     }
 

@@ -18,23 +18,23 @@ import butterknife.ButterKnife;
  * Created by gaoyang on 16/12/21.
  */
 
-public class MDToolbarAdapter extends RecyclerView.Adapter<MDToolbarAdapter.ViewHolder> {
+public class MDAdapter extends RecyclerView.Adapter<MDAdapter.ViewHolder> {
 
     private List<String> mList;
     private Context mContext;
-    public MDToolbarAdapter(List list, Context context) {
+    public MDAdapter(List list, Context context) {
         mList = list;
         mContext = context;
     }
 
     @Override
-    public MDToolbarAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public MDAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(mContext).inflate(R.layout.md_item, parent, false);
-        return new MDToolbarAdapter.ViewHolder(view);
+        return new MDAdapter.ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(MDToolbarAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(MDAdapter.ViewHolder holder, int position) {
         String str = String.valueOf(mList.get(position));
         holder.setData(str);
     }

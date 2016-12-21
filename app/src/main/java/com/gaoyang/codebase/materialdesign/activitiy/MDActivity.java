@@ -32,6 +32,9 @@ public class MDActivity extends AppCompatActivity implements View.OnClickListene
     @BindView(R.id.button4)
     Button button4;
 
+    @BindView(R.id.button5)
+    Button button5;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,6 +63,12 @@ public class MDActivity extends AppCompatActivity implements View.OnClickListene
             @Override
             public void onClick(View view) {
                 startActivity(initIntent(MDToolbarFourActivity.class));
+            }
+        });
+        button5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(initIntent(MDCollapsingToolbarOneActivity.class));
             }
         });
     }

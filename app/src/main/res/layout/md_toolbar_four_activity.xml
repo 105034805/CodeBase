@@ -17,7 +17,6 @@
             android:layout_height="wrap_content"
             app:title="Toolbar"
             app:subtitle="scroll | snap"
-            app:navigationIcon="@drawable/ic_arrow_back"
             app:layout_scrollFlags="scroll|snap"/>
         <!--与scroll|enterAlways|snap效果一样-->
         
